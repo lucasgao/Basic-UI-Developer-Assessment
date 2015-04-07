@@ -1,0 +1,58 @@
+
+
+ 	<div ng-controller="TypeaheadCtrl">
+ 		<br/>
+        <form name="form2" class="css-form" novalidate>
+        	<label for="usr">Location</label>
+            <input type="text" name="location" id="location" ng-model="selected" placeholder="Locations" typeahead="state as state.name for state in statesWithFlags | filter:{name:$viewValue}"  class="form-control" required="" />
+
+            <div  ng-show="form2.location.$touched">
+                <div ng-show="form2.location.$error.required">Tell us your location.</div>
+            </div>
+			
+            <br/><br/><br/>
+
+			<label for="usr">Date Depart</label>
+			<div class="row">
+				<div  id="test" class="col-md-8">
+		            <input type="text" name="depart" id="date_depart_display" class="form-control" placeholder="Depart Date" ng-model="departDate" datepicker-popup="{{format}}" is-open="opened1" min-date="minDate" datepicker-options="dateOptions" close-text="Close" required=""/>
+		            <span id="date_depart_picker" class="input-group-btn">
+		              <button type="button" class="btn btn-default" ng-click="open1($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+
+		            </span>
+    		        <div ng-show="form2.depart.$touched">
+    		          <div ng-show="form2.depart.$error.required">Tell us your depart date.</div>
+    		        </div>
+			    </div>
+                
+                <div id="time_depart_picker" class="col-md-4">
+                    <span class="time_depart_font">Time Depart</span>
+                    <timepicker ng-model="departTime" hour-step="hstep" minute-step="mstep" show-meridian="ismeridian"></timepicker>
+                </div>
+            
+
+            <div  class="col-md-8">
+                <label for="usr">Date Return</label>
+                <br/>
+                <input type="text" name="return" id="date_return_display" class="form-control" placeholder="Return Date" ng-model="returnDate" datepicker-popup="{{format}}" is-open="opened2" min-date="departDate" datepicker-options="dateOptions" close-text="Close" required=""/>
+                  <span id="date_return_picker" class="input-group-btn">
+                    <button type="button" class="btn btn-default" ng-click="open2($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+                  </span>
+                <div ng-show="form2.return.$touched">
+                    <div ng-show="form2.return.$error.required">Tell us your depart date.</div>
+                </div>
+            </div>
+
+            <div id="time_return_picker" class="col-md-4">
+                <span class="time_return_font">Time Return</span>
+                <timepicker ng-model="returnTime" hour-step="hstep" minute-step="mstep" show-meridian="ismeridian"></timepicker>
+            </div>
+        </div>
+            
+            
+
+            <input type="submit" class="btn btn-default btn-sm" ng-click="click()" value="Submit" ng-disabled="form2.$invalid"/>
+
+        </form>
+    </div>
+

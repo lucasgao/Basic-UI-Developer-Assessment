@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="js/angular.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <script src="js/ui-bootstrap-tpls-0.12.1.min.js"></script>
+    <script src="js/angular-ui-router.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <script src="js/script.js"></script>
+     <script type="text/ng-template" id="customTemplate.html">
+        // <a>
+        //     <img ng-src="http://upload.wikimedia.org/wikipedia/commons/thumb/{{match.model.flag}}" width="16">
+        //     <span bind-html-unsafe="match.label | typeaheadHighlight:query"></span>
+        // </a>
+    </script>
+
+    <style>
+
+      #firstName, #lastName, #email, #telephone, #location{
+        width:20%;
+      }
+      #date_depart_display, #date_return_display{
+        width:40%;
+      }
+
+      #date_depart_display, #date_depart_picker, #date_return_display, #date_return_picker{
+        display:inline;
+      }
+
+      #time_depart_picker{
+        
+        bottom:80px;
+      }
+
+      #time_return_picker{
+        bottom:60px;
+      }
+
+
+
+
+
+    </style>
+
+    
+  </head>
+
+	<body ng-app="routedTabs" class="container">
+		<div class="container-fluid">
+	   		<div ui-view></div>
+    </div>
+
+
+	</body>
+
+
+</html>
